@@ -16,17 +16,17 @@ $result = $conn->query("SELECT * FROM previousinternships where pfNumber = 17001
 
 $outp = "";
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
-    if ($outp != "") {$outp .= ",";}
-    $outp .= '{"pfNumber":"'  . $rs["pfNumber"] . '",';
-    $outp .= '"userName":"'   . $rs["userName"]        . '",';
-    $outp .= '"Branch":"'. $rs["Branch"]     . '",';
-    $outp .= '"applicationStatus":"'  . $rs["applicationStatus"] . '",';
-    $outp .= '"startDate":"'   . $rs["startDate"]        . '",';
-    $outp .= '"endDate":"'. $rs["endDate"]     . '"}';
+    if ($outpt != "") {$outpt .= ",";}
+    $outpt .= '{"pfNumber":"'  . $rs["pfNumber"] . '",';
+    $outpt .= '"userName":"'   . $rs["userName"]        . '",';
+    $outpt .= '"Branch":"'. $rs["Branch"]     . '",';
+    $outpt .= '"applicationStatus":"'  . $rs["applicationStatus"] . '",';
+    $outpt .= '"startDate":"'   . $rs["startDate"]        . '",';
+    $outpt .= '"endDate":"'. $rs["endDate"]     . '"}';
 }
-$outp ='{"records":['.$outp.']}';
+$outpt ='{"records":['.$outpt.']}';
 $conn->close();
 
-print_r($outp);
-return $outp;
+print_r($outpt);
+return $outpt;
 ?>
